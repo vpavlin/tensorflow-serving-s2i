@@ -19,7 +19,8 @@ RUN chown -R 1001:1001 /opt/app-root
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
-COPY ./tensorflow_model_server /opt/app-root/tensorflow_model_server
+#COPY ./tensorflow_model_server /opt/app-root/tensorflow_model_server
+RUN curl -L -o /opt/app-root/tensorflow_model_server https://github.com/sub-mod/tensorflow-wheels/releases/download/tf-serving-centos7/tensorflow_model_server
 
 
 # EXPOSE 6006
